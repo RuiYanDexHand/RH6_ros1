@@ -1,0 +1,33 @@
+<launch>
+  <!-- Dual-hand minimal launch: same IDs on separate CAN buses; both hands run sine via rh6_test.py -->
+
+  <!-- Left hand controller on can0 -->
+  <node pkg="rh6_ctrl_py" type="rh6_ctrl_node.py" name="rh6_ctrl_left" output="screen">
+    <remap from="ryhand6_status" to="ryhand6_status_left"/>
+    <remap from="ryhand6_cmd"    to="ryhand6_cmd_left"/>
+    <rosparam param="servo_id_map">[1, 2, 3, 4, 5, 6]</rosparam>
+    <param name="can_interface" value="can0"/>
+    <param name="share_dir" value="$(find rh6_ctrl_py)/urdf"/>
+  </node>
+
+  <!-- Right hand controller on can1 -->
+  <node pkg="rh6_ctrl_py" type="rh6_ctrl_node.py" name="rh6_ctrl_right" output="screen">
+    <remap from="ryhand6_status" to="ryhand6_status_right"/>
+    <remap from="ryhand6_cmd"    to="ryhand6_cmd_right"/>
+    <rosparam param="servo_id_map">[1, 2, 3, 4, 5, 6]</rosparam>
+    <param name="can_interface" value="can1"/>
+    <param name="share_dir" value="$(find rh6_ctrl_py)/urdf"/>
+  </node>
+
+  <!-- Left test node (sine; msg.mode=0 is set inside script) -->
+  <node pkg="rh6_ctrl_py" type="rh6_test.py" name="rh6_test_left" output="screen">
+    <remap from="ryhand6_cmd"    to="ryhand6_cmd_left"/>
+    <remap from="ryhand6_status" to="ryhand6_status_left"/>
+  </node>
+
+  <!-- Right test node (sine) -->
+  <node pkg="rh6_ctrl_py" type="rh6_test.py" name="rh6_test_right" output="screen">
+    <remap from="ryhand6_cmd"    to="ryhand6_cmd_right"/>
+    <remap from="ryhand6_status" to="ryhand6_status_right"/>
+  </node>
+</launch>

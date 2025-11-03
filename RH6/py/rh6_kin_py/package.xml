@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rh6_kin_py</name>
+  <version>0.1.0</version>
+  <description>Pinocchio-based kinematics for RH6 hand (ROS1 Python)</description>
+  <maintainer email="dev@example.com">dev</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>rospy</build_depend>
+  <exec_depend>rospy</exec_depend>
+</package>

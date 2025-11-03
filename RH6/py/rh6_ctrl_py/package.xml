@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rh6_ctrl_py</name>
+  <version>0.1.0</version>
+  <description>RH6 hand control Python node (ROS1, converted from ROS2)</description>
+
+  <maintainer email="dev@example.com">dev</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>rh6_msg</build_depend>
+  <build_depend>rh6_cmd</build_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>rh6_msg</exec_depend>
+  <exec_depend>rh6_cmd</exec_depend>
+  <exec_depend>rh6_can_py</exec_depend>
+  <exec_depend>rh6_kin_py</exec_depend>
+
+</package>

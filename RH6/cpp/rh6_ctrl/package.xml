@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rh6_ctrl</name>
+  <version>0.0.1</version>
+  <description>RH6 control node (ROS1) using Pinocchio for kinematics.</description>
+
+  <maintainer email="you@example.com">Your Name</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>roslib</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <!-- Add message/service packages used by this node -->
+  <build_depend>rh6_cmd</build_depend>
+  <build_depend>rh6_msg</build_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>roslib</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <!-- Runtime depends on generated headers/types from these packages -->
+  <exec_depend>rh6_cmd</exec_depend>
+  <exec_depend>rh6_msg</exec_depend>
+
+  <!-- Pinocchio and Eigen are system dependencies; declare them for clarity if using rosdep -->
+  <build_depend>pinocchio</build_depend>
+  <exec_depend>pinocchio</exec_depend>
+  <build_depend>eigen</build_depend>
+  <exec_depend>eigen</exec_depend>
+
+  <export/>
+</package>
